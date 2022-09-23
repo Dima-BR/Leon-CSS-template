@@ -1,0 +1,411 @@
+/* variables */
+:root {
+  --main-color: #10cab7;
+  --secondary-color: #2c4755;
+  --section-padding: 60px;
+  --section-BG-color: #f6f6f6;
+}
+/* variables */
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+body {
+  font-family: "Work Sans", sans-serif;
+}
+.parent {
+  background-color: #eee;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
+/* samll */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End global rules  */
+/* header  */
+.header {
+  padding: 20px;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  width: 60px;
+}
+.header .link {
+  position: relative;
+}
+.header .link:hover .menu-icon span:nth-child(2) {
+  width: 100%;
+}
+.header .link .menu-icon {
+  width: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.header .link .menu-icon span {
+  background-color: #333;
+  margin-bottom: 5px;
+  height: 3px;
+}
+.header .link .menu-icon span:first-child {
+  width: 100%;
+}
+.header .link .menu-icon span:nth-child(2) {
+  width: 60%;
+  transition: 0.3s;
+}
+.header .link .menu-icon span:last-child {
+  width: 100%;
+}
+.header .link ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: var(--section-BG-color);
+  position: absolute;
+  right: 0;
+  min-width: 200px;
+  top: calc(100% + 12px);
+  display: none;
+  z-index: 1;
+}
+.header .link ul::before {
+  content: "";
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent var(--section-BG-color) transparent;
+  position: absolute;
+  right: 3px;
+  top: -20px;
+}
+.header .link:hover ul {
+  display: block;
+}
+.header .link ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s;
+}
+.header .link ul li a:hover {
+  padding-left: 25px;
+}
+.header .link ul li:not(:last-child) a {
+  border-bottom: 1px solid #ddd;
+}
+/* end Header */
+/* start landing */
+.hero {
+  background-image: url(../img/mountain.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(100vh - 64px);
+  position: relative;
+}
+.hero .intro-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 320px;
+  max-width: 100%;
+}
+.hero .intro-text h1 {
+  margin: 0;
+  color: var(--main-color);
+  font-size: 50px;
+  font-weight: bold;
+}
+.hero .intro-text p {
+  font-size: 19px;
+  line-height: 1.8;
+}
+/* End landing */
+/* Start Featuers  */
+.features {
+  padding: var(--section-padding) 0;
+  background-color: var(--section-BG-color);
+}
+.features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+.features .feat {
+  padding: 20px;
+  text-align: center;
+}
+.features .feat i {
+  color: var(--main-color);
+  font-size: 40px;
+}
+.features .feat h3 {
+  font-weight: 800;
+  margin: 30px 0;
+}
+.features .feat p {
+  line-height: 1.8;
+  color: #888;
+  font-size: 17px;
+}
+/* End Featuers  */
+/* Special Heading Text  */
+.special-heading {
+  color: #ebeced;
+  font-size: 100px;
+  text-align: center;
+  font-weight: 800;
+  letter-spacing: -3px;
+  margin: 0;
+}
+.special-heading + p {
+  margin: -30px 0 0;
+  font-size: 20px;
+  text-align: center;
+  color: #797979;
+}
+@media (max-width: 767px) {
+  .special-heading {
+    font-size: 60px;
+  }
+  .special-heading + p {
+    margin-top: -20px;
+  }
+}
+/* End Special Heading Text  */
+/* services */
+.services {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.services .services-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+  margin-top: 100px;
+}
+.services .services-content .serve {
+  display: flex;
+  margin-bottom: 40px;
+}
+.services .services-content .serve i {
+  color: var(--main-color);
+  flex-basis: 60px;
+  font-size: 35px;
+}
+.services .services-content .serve .text {
+  flex: 1;
+}
+.services .services-content .serve .text h3 {
+  margin: 0 0 20px 0;
+}
+.services .services-content .serve .text p {
+  color: #444;
+  font-weight: 300;
+  line-height: 1.6;
+}
+.services .services-content .image {
+  text-align: center;
+  position: relative;
+}
+.services .services-content .image img {
+  width: 260px;
+  height: 325px;
+}
+.services .services-content .image::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 100px;
+  height: calc(100% + 100px);
+  background-color: var(--secondary-color);
+  z-index: -1;
+}
+
+@media (max-width: 1199px) {
+  .services .services-content .serve {
+    flex-direction: column;
+    text-align: center;
+  }
+  .services .services-content .image {
+    display: none;
+  }
+}
+/* services */
+/* start portfolio */
+.portfolio {
+  padding: var(--section-padding) 0;
+  background-color: var(--section-BG-color);
+}
+.portfolio .portfolio-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+  margin-top: 100px;
+}
+.card {
+  background-color: #fff;
+}
+.card img {
+  width: 100%;
+  height: 200px;
+}
+.card .content-info {
+  padding: 5px 20px;
+}
+.card .content-info h3 {
+  margin: 0;
+}
+.card .content-info p {
+  margin-bottom: 0;
+  color: #777;
+  line-height: 1.6;
+}
+/* end portfolio */
+/* start about */
+.about {
+  padding-top: var(--section-padding);
+  padding-bottom: calc(var(--section-padding) + 60px);
+}
+.about .about-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+.about .about-content .image {
+  position: relative;
+  width: 280px;
+}
+.about .about-content .image img {
+  max-width: 100%;
+  height: 375px;
+}
+.about .about-content .image::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: -40px;
+  width: 100px;
+  height: calc(100% + 80px);
+  background-color: #ebeced;
+  z-index: -1;
+}
+.about .about-content .image::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 300px;
+  border-left: 80px solid var(--main-color);
+  border-bottom: 80px solid var(--main-color);
+  z-index: -1;
+  right: -150px;
+  top: -25px;
+}
+.about-text {
+  flex-basis: calc(100% - 500px);
+}
+.about-content .about-text p:first-of-type {
+  font-weight: bold;
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+.about-content .about-text hr {
+  width: 50%;
+  display: inline-block;
+  border-color: var(--main-color);
+}
+.about-content .about-text p:last-child {
+  color: #777;
+  line-height: 1.6;
+}
+@media (max-width: 1024px) {
+  .about .about-content {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .about-text {
+    margin-top: 65px;
+  }
+}
+@media (max-width: 625px) {
+  .about .about-content .image::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 300px;
+    border-left: 80px solid var(--main-color);
+    border-bottom: 80px solid var(--main-color);
+    z-index: -1;
+    right: -45px;
+    top: -24px;
+  }
+}
+/* end about */
+/* start contact */
+.contact {
+  padding: var(--section-padding) 0;
+  background-color: var(--section-BG-color);
+}
+.contact .contact-info {
+  padding: var(--section-padding) 0;
+  text-align: center;
+}
+.label {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--secondary-color);
+  letter-spacing: -2px;
+  margin-bottom: 15px;
+}
+.link {
+  display: block;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--main-color);
+  text-decoration: none;
+}
+.social {
+  margin-top: 25px;
+}
+.social i {
+  font-size: 16px;
+  margin: 5px;
+  color: var(--secondary-color)
+}
+@media (max-width: 440px) {
+  .link {
+    font-size: 22px;}
+    .label {
+      font-size: 22px;}
+}
+/* end contact */
